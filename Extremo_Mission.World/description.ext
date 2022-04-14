@@ -1,0 +1,486 @@
+/*
+	## EXTREMO
+	## Nikko Renolds
+
+    https://community.bistudio.com/wiki/Description.ext
+*/
+#include "defines.hpp"
+#include "ui\common.hpp"
+
+//--- Arma Settings
+author = "Nikko";
+onLoadName = "Extremo Survival";
+loadScreen = "\Extremo_assets\texture\mod\logo.paa";
+
+OnLoadIntro = "";                           //--- 
+OnLoadIntroTime = 0;                        //--- 
+OnLoadMissionTime = 0;                      //--- 
+briefing = false;                           //--- Briefing will still be displayed until all clients are connected and done loading :(
+debriefing = false;                         //--- Defines if the debriefing is shown or not at the end of the mission. 
+skipLobby = true;                           //---  bypassing role selection screen
+joinUnassigned = false;                     //--- 
+scriptedPlayer = true; 
+disabledAI = true;                          //--- 
+forceRotorLibSimulation = 2;                //--- https://community.bistudio.com/wiki/Description.ext#forceRotorLibSimulation
+disableRandomization[] = {"All"};           //---
+showGroupIndicator = true;                  //--- 
+enableItemsDropping = false;                //--- Disable dropping items while swimming
+allowProfileGlasses = false;                //--- 
+showWatch = false;                          //--- 
+showCompass = false;                        //--- 
+showGPS = true;                             //--- 
+showUAVFeed = false;                        //--- 
+showSquadRadar = false;                     //--- 
+disableChannels[] = {0, 2};                 //--- https://community.bistudio.com/wiki/Description.ext#disableChannels 
+showHUD[] = {                               //--- Scripted HUD (same as showHUD command)
+	true,                                   //--- ^^^^^^^^^^^^ 
+	false,                                  //--- ^^^^^^^^^^^^ Vehicle and unit info
+	false,                                  //--- ^^^^^^^^^^^^ Vehicle radar [HIDDEN]
+	false,                                  //--- ^^^^^^^^^^^^ Vehicle compass [HIDDEN]
+	false,                                  //--- ^^^^^^^^^^^^ Tank direction indicator
+	false,                                  //--- ^^^^^^^^^^^^ Commanding menu
+	false,                                  //--- ^^^^^^^^^^^^ Group info bar
+	true,                                   //--- ^^^^^^^^^^^^ HUD weapon cursors
+	false,                                  //--- ^^^^^^^^^^^^ Vehicle display panels
+	false,                                  //--- ^^^^^^^^^^^^ "x killed by y" systemChat messages
+	true                                    //--- ^^^^^^^^^^^^ force show drawIcon3D icons
+};
+allowFunctionsRecompile = true;             //--- bypassing final functions (should be false on an active server)
+allowFunctionsLog = true;                   //--- Allow RPT loging
+enableDebugConsole[] = {                    //---  Debug Console Users with accses without admin password
+    "76561199109931625",                    //--- ^^^^^^^^^^^^^^ Ni1kko  (TᕼᗩT ᑎOᖇTᕼGᑌY#5537)
+    "76561198147157388"                     //--- ^^^^^^^^^^^^^^ Spodini (ScubaMoFuckingSteve#2999)
+};
+
+///////////////////////////////////////////////
+//--- ArmaRespawn
+respawn = "BASE";                           //--- Sets respawn type. `BASE` uses these markers for respawning (['respawn_west','respawn_east','respawn_guerrila','respawn_civilian'])
+respawnDialog = false;                      //--- Show the scoreboard and respawn countdown timer for a player if he is killed with respawn type 3. 
+respawnOnStart = disabled;                  //--- Respawn player when he joins the game. Available only for INSTANT and BASE
+respawnButton = true;                       //--- Enable or disable the respawn button in the menu for INSTANT and BASE respawn types. 
+respawnTemplates[] = {"Extremo"};           //--- Respawn templates from `CfgRespawnTemplates`. (May not work with extremo due to our system see: `CfgSpawn`)
+///////////////////////////////////////////////
+//--- ArmaCorpse (These are broken as fuck, do not use them!) 
+corpseManagerMode = 0;
+corpseLimit = 20;//max dead bodys
+corpseRemovalMinTime = 1800;
+corpseRemovalMaxTime = 3600;
+wreckManagerMode = 0;
+wreckLimit = 2;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 360;
+minPlayerDistance = 50; // meters. Default: 0
+///////////////////////////////////////////////
+
+class Header
+{
+	gameType="Survive";
+	minPlayers=1;
+	maxPlayers=150;
+};
+
+class CfgPatches
+{
+    class Extremo_Mission
+	{
+        class authors_info
+		{
+			class author_0
+			{
+				name = "Nikko";
+				uid = "76561199109931625";
+				email = "Ni1kko@outlook.com";
+				github = "github.com/Ni1kko";
+			};	
+			class author_1
+			{
+				name = "HappyFeet";
+				uid = "76561198147157388";
+				email = "Stephenallen1414@gmail.com";
+				github = "github.com/Spodini";
+			};
+		};
+        frameworkVersion = "1.4.106-alpha.1+framework development";
+	};
+};
+
+class CfgMessages
+{
+    activeTemplate = "Extremo";
+    /*
+        class Example
+        {
+            enabled = true;        //--- Toggle system
+            delay = 5;             //--- X mins between messages
+            randomOrder = true;    //--- Show messages in random a order eachtime
+            messages[] = {
+                "Hi %SteamName%, you can visit our forums here: %Website%"
+            };
+        };
+    */
+	class Extremo
+	{
+        enabled = true;         //--- Toggle system
+        delay = 30;             //--- X mins between messages
+        randomOrder = false;    //--- Show messages in random a order eachtime
+        messages[] = {
+            "Hi %SteamName%, you can visit our forums here: %Website%",
+            "Have fun & be respectful of each other",
+            "Thanks for spending your time on (%FrameworkName%)",
+            "%Website%"
+        };
+	};
+};
+
+class CfgPlayer
+{
+	class Extremo
+	{
+        startCash = 100;
+        startBank = 10000;
+        forbiddenPositions[] = {
+            //{"marker", distance}
+        };
+	};
+};
+
+class CfgSpawn 
+{
+    activeTemplate = "Extremo";
+
+    /*
+        class Template 
+        {
+            class WorldName 
+            {
+                spawnIsland = "Marker";
+                zones[] = {
+                    {"Marker", "Picture"},
+                };
+                protectedZones[] = { 
+                    {"Marker",  "Lockcode"},
+                };
+            };
+        };
+    */
+
+    class Extremo 
+    {
+        class Altis 
+        {
+            spawnIsland = "extremo_marker_spawnisland";
+            zones[] = {
+                {"extremo_marker_spawnzone_kavala",         "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_atheria",        "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_oreokastro",     "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_molos",          "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_chalkeia",       "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_agela",          "\Extremo_assets\texture\mod\icon.paa"}
+            };
+            protectedZones[] = {
+                //{"extremo_marker_spawnzone_atheria",    "1234"}
+            };
+        };
+        class Enoch 
+        {
+            spawnIsland = "extremo_marker_spawnisland";
+            zones[] = {
+                {"extremo_marker_spawnzone_nadbór",             "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_topolin",            "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_tarnow",             "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_lukow_airfield",     "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_dolnik",             "\Extremo_assets\texture\mod\icon.paa"}
+            };
+            protectedZones[] = {
+                //{"extremo_marker_spawnzone_lukow_airfield",    "1234"}
+            };
+        };
+        class VR 
+        {
+            spawnIsland = "extremo_marker_spawnisland";
+            zones[] = {
+                {"extremo_marker_spawnzone1",    "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone2",    "\Extremo_assets\texture\mod\icon.paa"}
+            };
+            protectedZones[] = {
+                //{"extremo_marker_spawnzone2",    "1234"}
+            };
+        };
+        class OttawaCounty 
+        { 
+            spawnIsland = "extremo_marker_spawnisland";
+            zones[] = {
+                {"extremo_marker_spawnzone_northjackson",    "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_eastside",        "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_city",            "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_cityisle",        "\Extremo_assets\texture\mod\icon.paa"},
+                {"extremo_marker_spawnzone_mistyfarms",      "\Extremo_assets\texture\mod\icon.paa"}
+            };
+            protectedZones[] = { 
+                {"extremo_marker_spawnzone_city",            "241115"},
+                {"extremo_marker_spawnzone_mistyfarms",      "185932"}
+            };
+        };
+    };
+};
+
+class CfgSpawnVehicles
+{ 
+    nightVision = true;                     //--- Enables or disables nightvision optics on ALL vehicles
+    thermalVision = false;                  //--- Enables or disables thermal optics on ALL vehicles
+    unlockInSafeZonesAfterRestart = true;	//--- unlock vehicles on server boot if they are in safe zones
+
+    class NonPersistent 
+    {
+        vehiclesGridSize = 4500;            //--- Grid Size for vehicle spawning, smaller the number more vehicles
+        vehiclesGridAmount = 2;             //--- Vehicle ammount per grid
+        vehiclesDebugMarkers = true;        //--- Creates global markers for vehicle spawn, ideal for tweeking
+
+        damageChance = 20;                  //--- x% chance for a vehicle HITPOINT to be damaged
+        fuel = true;                        //--- If set true will give random amount fuel, false will give no fuel 
+        ammo = true;                        //--- If set true will give random amount ammo, false will give no ammo 
+
+        groundVehicles[] = {                //--- Array of classnames to spawn on land
+            "Ark_Dartblack",
+            "I_C_Offroad_02_unarmed_F",
+            "I_E_Van_02_medevac_F",
+            "O_MRAP_02_gmg_F",
+            "B_GEN_Offroad_01_gen_F",
+            "O_Truck_02_transport_F"
+        };
+
+        waterVehicles[] = {                 //--- Array of classnames to spawn in water
+
+        };
+        
+    };
+};
+
+class CfgKeyHandler 
+{
+    class Extremo
+	{
+        //https://community.bistudio.com/wiki/DIK_KeyCodes#German_keyboard
+        class KeyDown 
+        {
+            functions[] = {
+                //Function,             		                [dik,shift,ctrl,alt]   	    		call/spawn
+                {"Extremo_fnc_dik_keyUp_jump", 			        {"DIK_SPACE",false,false,false}, 	"spawn"	  } // Space
+            };
+        };
+        class KeyUp 
+        {
+            functions[] = {
+                //Function,             		                [dik,shift,ctrl,alt]   	    		call/spawn
+                {"Extremo_fnc_dik_keyUp_toggleTablet", 			{"DIK_6",false,false,false}, 	    "call"	  }, // 6
+                {"Extremo_fnc_dik_keyUp_toggleAutorun", 		{"DIK_0",false,false,false}, 	    "call"	  }  // 0
+            };
+        };
+    };
+};
+
+class CfgFunctions
+{
+    class Extremo
+    { 
+        //--- Client
+        class Client
+        {
+            file = "functions\client";
+            class client_init {};
+            class client_initEventhandlers {};
+            class client_initVariables {};
+            class client_log {};
+            class client_messages {};
+        };
+
+        //--- Database
+        class Database
+        {
+            file = "functions\database"; 
+            class database_client {}; 
+        };
+
+        //--- DIK
+        class Dik
+        {
+            file = "functions\dik"; 
+            class dik_initEventHandlers {};
+            class dik_keyUp_jump {};
+            class dik_keyUp_toggleAutorun {};
+            class dik_keyUp_toggleTablet {};
+        };
+
+        //--- Events
+        class Events
+        {
+            file = "functions\events"; 
+            class event_handleDamage {};
+            class event_handleChatMessage {};
+            class event_map {};
+            class event_playerKilled {};
+            class event_playerRespawned {};
+            class event_preloadFinished {};
+        };
+
+        //--- GUI
+        class Gui
+        {
+            file = "functions\gui"; 
+            class gui_customEvent {};
+            class gui_lockScreen {};
+            class gui_lockScreenEH {};
+            class gui_modelBox_create {};
+            class gui_modelBox_destroy {};
+            class gui_modelBox_update {};
+            class gui_spawnScreen {};
+            class gui_spawnScreenEH {};
+            class gui_splashScreen {};
+            class gui_splashScreenEH {};
+            class gui_tabletScreenEH {};
+            class gui_tabletScreenSwitch {};
+            class gui_tabletScreenLock {};
+            class gui_tabletScreenGroupBanking {};
+            class gui_tabletScreenGroupCrafting {};
+            class gui_tabletScreenGroupContacts {};
+            class gui_tabletScreenGroupSync {};
+            class gui_tabletScreenGroupSettings {};
+            class gui_toasterScreen {};
+            class gui_toasterScreenEH {};
+            class gui_vehicleTraderScreen {};
+            class gui_vehicleTraderScreenEH {};
+        };
+
+        //--- Medical
+        class Medical
+        {
+            file = "functions\medical";
+            class medical_bledout {};
+            class medical_bledoutEVH {};
+            class medical_canDie {};
+            class medical_createRevivedEffects {};
+            class medical_destroyRevivedEffects {};
+            class medical_givePainKillers {};
+            class medical_incapacitated {};
+            class medical_revive {};
+            class medical_revived {};
+        };
+
+        //--- Player
+        class Player
+        {
+            file = "functions\player";
+            class player_autorunEH {};
+            class player_canAutorun {};
+            class player_canJump {};
+            class player_init {};
+            class player_initEventhandlers {};
+            class player_login {};
+            class player_preloader {};
+        };
+
+        //--- System
+        class System
+        {
+            file = "functions\system"; 
+            class system_animationSync {};
+            class system_exponentToString {};
+            class system_dateString {};
+            class system_destroyLayer {};
+            class system_deathType {};
+            class system_directionInfo {};
+            class system_getCargoType {};
+            class system_getRealTime {};
+            class system_itemDetails {};
+            class system_replacmentCallback {};
+            class system_locationInfo {};
+        };
+
+        //--- World
+        class World
+        {
+            file = "functions\world";
+            class world_getTerrainGradient {};
+            class world_setupTraders {};
+            class world_createAttachTo {};
+        };
+    };
+};
+
+class CfgRemoteExec
+{
+    // RemoteExec modes:
+    // 0 - disabled
+    // 1 - enabled, taking whitelist into account
+    // 2 - enabled, ignoring whitelist (default, because of backward compatibility)
+    #define ExtremoRE_Mode 2
+
+    // Ability to send JIP messages:
+    // false - disable JIP messages
+    // true - allow JIP messages (default)
+    #define ExtremoRE_AllowJIP true
+    
+    class Functions 
+    { 
+		ExtremoRE_Setup(ExtremoRE_Mode,ExtremoRE_AllowJIP);
+
+        //////////////// GLOBAL Whitelist ////////////////
+        ExtremoRE_Global(foski_changetrafficlights);
+        ExtremoRE_Global(bis_fnc_debugconsoleexec);
+        ExtremoRE_GlobalJIP(bis_fnc_execvm);
+        ExtremoRE_GlobalJIP(extremo_fnc_system_animationSync);
+        //////////////// CLIENT Whitelist ////////////////
+        ExtremoRE_Client(extremo_fnc_client_init);
+        ExtremoRE_Client(extremo_fnc_medical_revive);
+        ExtremoRE_Client(extremo_fnc_medical_revived);
+        ExtremoRE_Client(extremo_fnc_medical_createRevivedEffects);
+        ExtremoRE_Client(extremo_fnc_database_client);
+        ExtremoRE_Client(Extremo_fnc_client_log);
+        ExtremoRE_Client(Extremo_fnc_gui_toasterScreen);
+        //////////////// SERVER Whitelist ////////////////
+        ExtremoRE_Server(extremo_fnc_database_server);
+        ExtremoRE_Server(Extremo_fnc_server_log);
+        ExtremoRE_Server(extremo_fnc_vehicles_purchase);
+    };
+
+    class Commands 
+    {
+        ExtremoRE_Setup(ExtremoRE_Mode,ExtremoRE_AllowJIP);
+
+        //////////////// GLOBAL Whitelist ////////////////
+        ExtremoRE_Global(addHandgunItem);
+        ExtremoRE_Global(addMagazine);
+        ExtremoRE_Global(addPrimaryWeaponItem);
+        ExtremoRE_Global(addWeapon);
+        ExtremoRE_Global(setFuel);
+        ExtremoRE_Global(hideObjectGlobal);
+        ExtremoRE_GlobalJIP(execvm);
+        ExtremoRE_GlobalJIP(lock);
+        //////////////// CLIENT Whitelist ////////////////
+        ExtremoRE_Client(addAction);
+        ExtremoRE_Client(systemChat);
+        ExtremoRE_ClientJIP(hint);
+        ExtremoRE_ClientJIP(switchMove);
+        //////////////// SERVER Whitelist ////////////////
+        ExtremoRE_ServerJIP(deleteVehicle);
+    };
+};
+
+class CfgDebriefing 
+{
+    //https://community.bistudio.com/wiki/BIS_fnc_endMission
+    DBRIEF(extremoAnticheat,   "Anticheat!",   "Extremo anti-cheat has flagged you.",              "Goodday, your antics have been logged and will be dealt with.");
+    DBRIEF(extremoError,       "Error!",       "An error has occured!",                            "An error occured please report this to the server owner.");
+    DBRIEF(extremoAborted,     "Goodbye!",     "Your data has been sent to the server!",           "www.extremo.co.uk #1 Survival Framework in the UK and Europe.");
+};
+
+//--- Post process
+class CfgPostprocessTemplates
+{
+	class Bleedout
+	{ 
+		colorCorrections[] = { 1, 1, 0, {0.4, 0.1, 0.1, 0.11}, {0.2, 0, 0, 0.111}, {0.2, 0.1, 0.1, 0.1} };
+		displayName = "Bleedout";
+		filmGrain[] = { 0.04, 1, 1, 0, 0.2 };
+	};
+};

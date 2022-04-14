@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": { 
+		"sqfVmLanguageServer.ls.additionalMappings": [
+			{"/Extremo_assets": "D:/GitHub/Repos/Ni1kko/A3Extremo/Extremo_assets" }
+		],
+		"sqflint.includePrefixes": {
+			"\\A3\\": "D:/SteamLibrary/steamapps/common/Arma3Server/addons" 
+		},
+		"sqflint.checkPaths": true,
+	},
+}

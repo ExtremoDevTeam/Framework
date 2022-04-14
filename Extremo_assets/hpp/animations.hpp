@@ -1,0 +1,843 @@
+class CfgGesturesMale
+{
+	class Default;
+	class States
+	{
+		class GestureExtremoAxeSwing01: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_Axe_Swing01.rtm";
+			looped=0;
+			speed=1.5;
+			mask="launcher";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=0;
+			rightHandIKBeg=1;
+			rightHandIKEnd=1;
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class GestureExtremoSledgeHammerSwing01: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_SledgeHammer_Swing01.rtm";
+			looped=0;
+			speed=0.75;
+			mask="launcher";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=0;
+			rightHandIKBeg=1;
+			rightHandIKEnd=1;
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class GestureExtremoSwordSwing01: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_Axe_Swing01.rtm";
+			looped=0;
+			speed=0.75;
+			mask="launcher";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=0;
+			rightHandIKBeg=1;
+			rightHandIKEnd=1;
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class GestureExtremoPickaxeSwing01: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_pickaxe_loop";
+			looped=1;
+			speed=0.600;
+			mask="launcher";
+            headBobStrength = 0.4;
+            headBobMode = 4;
+			disableWeapons=0;
+            rightHandIKBeg = 1;
+            rightHandIKEnd = 1;
+            leftHandIKBeg = 1;
+            leftHandIKEnd = 1;
+		};
+		class GestureExtremoSuicide01: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_Suicide01.rtm";
+			looped=0;
+			speed=0.14354099;
+			mask="rightHand";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=1;
+			rightHandIKBeg=1;
+			rightHandIKEnd=1;
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class GestureExtremoSuicide02: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_Suicide02.rtm";
+			looped=0;
+			speed=0.124481;
+			mask="rightHand";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=1;
+			rightHandIKBeg=1;
+			rightHandIKEnd=1;
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class GestureExtremoRussianRoulette01: Default
+		{
+			file="\Extremo_Assets\animation\Extremo_RussianRoulette01.rtm";
+			looped=0;
+			speed=0.30000001;
+			mask="upperTorsoSelfShoot";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=1;
+			disableWeaponsLong=1;
+			rightHandIKBeg=0;
+			rightHandIKEnd=0;
+			leftHandIKBeg=0;
+			leftHandIKEnd=0;
+			rightHandIKCurve[]={};
+			showItemInRightHand=0;
+			showHandGun=1;
+			weaponLowered=0;
+			canPullTrigger=1;
+			forceAim=1;
+			enableOptics="false";
+			showWeaponAim="false";
+		};
+		class GestureExtremoSuicideCancel01: Default
+		{
+			file="\A3\anims_f\Data\Anim\Sdr\gst\GestureHi";
+			looped=0;
+			speed=1;
+			mask="rightHand";
+			headBobStrength=0.2;
+			headBobMode=2;
+			disableWeapons=1;
+			rightHandIKBeg=1;
+			rightHandIKEnd=1;
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+	};
+	class BlendAnims
+	{
+		upperTorsoSelfShoot[]=
+		{
+			"head",
+			1,
+			"neck1",
+			1,
+			"neck",
+			1,
+			"weapon",
+			0,
+			"LeftShoulder",
+			1,
+			"LeftArm",
+			1,
+			"LeftArmRoll",
+			1,
+			"LeftForeArm",
+			1,
+			"LeftForeArmRoll",
+			1,
+			"LeftHand",
+			1,
+			"LeftHandRing",
+			1,
+			"LeftHandPinky1",
+			1,
+			"LeftHandPinky2",
+			1,
+			"LeftHandPinky3",
+			1,
+			"LeftHandRing1",
+			1,
+			"LeftHandRing2",
+			1,
+			"LeftHandRing3",
+			1,
+			"LeftHandMiddle1",
+			1,
+			"LeftHandMiddle2",
+			1,
+			"LeftHandMiddle3",
+			1,
+			"LeftHandIndex1",
+			1,
+			"LeftHandIndex2",
+			1,
+			"LeftHandIndex3",
+			1,
+			"LeftHandThumb1",
+			1,
+			"LeftHandThumb2",
+			1,
+			"LeftHandThumb3",
+			1,
+			"RightShoulder",
+			1,
+			"RightArm",
+			1,
+			"RightArmRoll",
+			1,
+			"RightForeArm",
+			1,
+			"RightForeArmRoll",
+			1,
+			"RightHand",
+			1,
+			"RightHandRing",
+			1,
+			"RightHandPinky1",
+			1,
+			"RightHandPinky2",
+			1,
+			"RightHandPinky3",
+			1,
+			"RightHandRing1",
+			1,
+			"RightHandRing2",
+			1,
+			"RightHandRing3",
+			1,
+			"RightHandMiddle1",
+			1,
+			"RightHandMiddle2",
+			1,
+			"RightHandMiddle3",
+			1,
+			"RightHandIndex1",
+			1,
+			"RightHandIndex2",
+			1,
+			"RightHandIndex3",
+			1,
+			"RightHandThumb1",
+			1,
+			"RightHandThumb2",
+			1,
+			"RightHandThumb3",
+			0,
+			"Spine",
+			1,
+			"Spine1",
+			1,
+			"Spine2",
+			1,
+			"Spine3",
+			1,
+			"pelvis",
+			1
+		};
+	};
+};
+
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		//player
+		GestureExtremoAxeSwing01="";
+		GestureExtremoSledgeHammerSwing01="";
+		GestureExtremoPickaxeSwing01="";
+		GestureExtremoSuicide01="";
+		GestureExtremoSuicide02="";
+		GestureExtremoSuicideCancel01="";
+		GestureExtremoRussianRoulette01="";
+
+		//vehicle
+		Golf_Driver="Golf_Driver";
+		Golf_Cargo01="Golf_Cargo01";
+		Golf_Cargo02="Golf_Cargo02";
+		Golf_Cargo03="Golf_Cargo03";
+	};
+	class Actions
+	{
+		class NoActions: ManActions
+		{
+			GestureExtremoAxeSwing01[]=
+			{
+				"GestureExtremoAxeSwing01",
+				"Gesture"
+			};
+			GestureExtremoSledgeHammerSwing01[]=
+			{
+				"GestureExtremoSledgeHammerSwing01",
+				"Gesture"
+			};
+			GestureExtremoPickaxeSwing01[]=
+			{
+				"GestureExtremoPickaxeSwing01",
+				"Gesture"
+			};
+			GestureExtremoSuicide01[]=
+			{
+				"GestureExtremoSuicide01",
+				"Gesture"
+			};
+			GestureExtremoSuicide02[]=
+			{
+				"GestureExtremoSuicide02",
+				"Gesture"
+			};
+			GestureExtremoSuicideCancel01[]=
+			{
+				"GestureExtremoSuicideCancel01",
+				"Gesture"
+			};
+			GestureExtremoRussianRoulette01[]=
+			{
+				"GestureExtremoRussianRoulette01",
+				"Gesture"
+			};
+		};
+	};
+};
+
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		//Player
+		class CutSceneAnimationBaseSit;
+		class AmovPercMstpSnonWnonDnon;
+		class HubSittingChairA_idle1;
+		class AmovPercMstpSrasWlnrDnon;
+		class AmovPercMstpSrasWpstDnon;
+		class Acts_AidlPsitMstpSsurWnonDnon_loop: CutSceneAnimationBaseSit
+		{
+			collisionShape="A3\anims_f\Data\Geom\Sdr\Psit.p3d";
+			head="headDefault";
+			ragdoll=1;
+			terminal=1;
+			affectedByFatigue="false";
+			canPullTrigger=0;
+			canReload=0;
+			disableWeapons=1;
+			disableWeaponsLong=1;
+			enableBinocular=0;
+			enableMissile=0;
+			enableOptics=0;
+			showHandGun=0;
+			showItemInHand=0;
+			showItemInRightHand=0;
+			showWeaponAim=0;
+			actions="Acts_SittingTiedHands_actions";
+			file="\A3\Anims_F_Mark\data\anim\sdr\cts\Acts_AidlPsitMstpSsurWnonDnon_1";
+			VariantsPlayer[]=
+			{
+				"Acts_AidlPsitMstpSsurWnonDnon01",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon02",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon03",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon04",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon05",
+				0.2
+			};
+			VariantsAI[]=
+			{
+				"Acts_AidlPsitMstpSsurWnonDnon01",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon02",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon03",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon04",
+				0.2,
+				"Acts_AidlPsitMstpSsurWnonDnon05",
+				0.2
+			};
+			VariantAfter[]={20,20,20};
+			InterpolateTo[]=
+			{
+				"Acts_AidlPsitMstpSsurWnonDnon01",
+				0.001,
+				"Acts_AidlPsitMstpSsurWnonDnon02",
+				0.001,
+				"Acts_AidlPsitMstpSsurWnonDnon03",
+				0.001,
+				"Acts_AidlPsitMstpSsurWnonDnon04",
+				0.001,
+				"Acts_AidlPsitMstpSsurWnonDnon05",
+				0.001,
+				"Acts_AidlPsitMstpSsurWnonDnon_out",
+				0.1,
+				"Unconscious",
+				0.0099999998
+			};
+		};
+		class Extremo_Acts_RepairVehicle01: CutSceneAnimationBaseSit
+		{
+			collisionShape="A3\anims_f\Data\Geom\Sdr\Psit.p3d";
+			head="headDefault";
+			ragdoll=1;
+			terminal=1;
+			affectedByFatigue="false";
+			canPullTrigger=0;
+			canReload=0;
+			disableWeapons=1;
+			disableWeaponsLong=1;
+			enableBinocular=0;
+			enableMissile=0;
+			enableOptics=0;
+			showHandGun=0;
+			showItemInHand=0;
+			showItemInRightHand=0;
+			showWeaponAim=0;
+			actions="Acts_SittingTiedHands_actions";
+			file="A3\anims_f\data\Anim\sdr\cts\InBaseMoves_repairVehicleKnl";
+			VariantsPlayer[]=
+			{
+				"Extremo_Acts_RepairVehicle01_Animation01",
+				0.2
+			};
+			VariantsAI[]=
+			{
+				"Extremo_Acts_RepairVehicle01_Animation01",
+				0.2
+			};
+			VariantAfter[]={20,20,20};
+			InterpolateTo[]=
+			{
+				"Extremo_Acts_RepairVehicle01_Animation01",
+				0.001,
+				"Unconscious",
+				0.0099999998
+			};
+		};
+		class Extremo_Acts_RepairVehicle01_Animation01: Extremo_Acts_RepairVehicle01
+		{
+			equivalentTo="Extremo_Acts_RepairVehicle01";
+			speed=-25;
+			VariantsPlayer[]={};
+			VariantsAI[]={};
+			interpolationSpeed=0.5;
+			InterpolateTo[]=
+			{
+				"Extremo_Acts_RepairVehicle01",
+				0.001,
+				"Unconscious",
+				0.0099999998
+			};
+		};
+		class Extremo_Acts_Suicide01: AmovPercMstpSrasWpstDnon
+		{
+			looped=0;
+			file="\Extremo_Assets\animation\Extremo_Suicide01";
+			terminal=0;
+			speed=0.14354099;
+			showHandGun=1;
+			head="headNo";
+			forceAim=1;
+			ConnectTo[]=
+			{
+				"DeadState",
+				1
+			};
+			InterpolateTo[]={};
+		};
+		class Extremo_Acts_Suicide02: AmovPercMstpSrasWpstDnon
+		{
+			looped=0;
+			file="\Extremo_Assets\animation\Extremo_Suicide02";
+			terminal=0;
+			speed=0.124481;
+			showHandGun=1;
+			head="headNo";
+			forceAim=1;
+			ConnectTo[]=
+			{
+				"DeadState",
+				1
+			};
+			InterpolateTo[]={};
+		};
+		class Extremo_Acts_Suicide03: Extremo_Acts_Suicide01
+		{
+			terminal=1;
+			ragdoll=1;
+		};
+		class Extremo_Acts_Suicide04: Extremo_Acts_Suicide02
+		{
+			terminal=1;
+			ragdoll=1;
+		};
+		class Extremo_RouletteSitting01: CutSceneAnimationBaseSit
+		{
+			collisionShape="A3\anims_f\Data\Geom\Sdr\geom_empty.p3d";
+			head="headDefault";
+			ragdoll=1;
+			terminal=0;
+			affectedByFatigue="false";
+			canPullTrigger=0;
+			canReload=0;
+			disableWeapons=1;
+			disableWeaponsLong=1;
+			enableBinocular=0;
+			enableMissile=0;
+			enableOptics=0;
+			showHandGun=1;
+			showItemInHand=0;
+			showItemInRightHand=0;
+			showWeaponAim=0;
+			actions="Acts_SittingTiedHands_actions";
+			file="\A3\Anims_F_EPA\data\Anim\sdr\cts\HubCleaned\SittingChair\HubSittingChairA_idle1";
+			VariantsPlayer[]=
+			{
+				"Extremo_RouletteSitting01_Animation01",
+				0.2
+			};
+			VariantsAI[]=
+			{
+				"Extremo_RouletteSitting01_Animation01",
+				0.2
+			};
+			VariantAfter[]={20,20,20};
+			InterpolateTo[]=
+			{
+				"Extremo_RouletteSitting01_Animation01",
+				0.001,
+				"DeadState",
+				0.0099999998
+			};
+		};
+		class Extremo_RouletteSitting01_Animation01: Extremo_RouletteSitting01
+		{
+			equivalentTo="Extremo_RouletteSitting01";
+			speed=-25;
+			VariantsPlayer[]={};
+			VariantsAI[]={};
+			interpolationSpeed=0.2;
+			InterpolateTo[]=
+			{
+				"Extremo_RouletteSitting01",
+				0.001,
+				"DeadState",
+				0.0099999998
+			};
+		};
+		class Extremo_Shovel_Dig01: AmovPercMstpSrasWlnrDnon
+		{
+			file="\Extremo_Assets\animation\Extremo_Shovel_Dig01";
+			looped=0;
+			speed=0.1;
+			duty=0.69999999;
+			mask="BodyFull";
+			leftHandIKBeg=1;
+			leftHandIKCurve[]={1};
+			leftHandIKEnd=1;
+			rightHandIKBeg=1;
+			rightHandIKCurve[]={1};
+			rightHandIKEnd=1;
+			weaponIK=4;
+			showWeaponAim=0;
+			disableWeapons=1;
+			disableWeaponsLong=1;
+			enableBinocular=0;
+			enableMissile=0;
+			enableOptics=0;
+			canReload=0;
+			leaning="empty";
+			aimingBody="empty";
+			aiming="empty";
+			forceAim=1;
+			limitGunMovement=9.1000004;
+			headBobMode=0;
+			headBobStrength=0;
+			canPullTrigger=0;
+			enableDirectControl=0;
+			weaponLowered=0;
+			variantsPlayer[]={};
+			variantsAI[]={};
+			ConnectFrom[]=
+			{
+				"AmovPercMstpSrasWlnrDnon",
+				2,
+				"AmovPercMstpSlowWlnrDnon",
+				2
+			};
+			ConnectTo[]=
+			{
+				"AmovPercMstpSrasWlnrDnon",
+				2,
+				"AmovPercMstpSlowWlnrDnon",
+				2
+			};
+			InterpolateTo[]=
+			{
+				"DeadState",
+				0.0099999998
+			};
+			showHandGun=0;
+			showItemInRightHand=0;
+			soundEnabled=1;
+		};
+		class Extremo_Funny_Dab01: AmovPercMstpSnonWnonDnon
+		{
+			file="\Extremo_Assets\animation\Extremo_Funny_Dab01";
+			looped=0;
+			speed=0.40000001;
+			duty=0.69999999;
+			mask="BodyFull";
+			leftHandIKBeg=1;
+			leftHandIKCurve[]={1};
+			leftHandIKEnd=1;
+			rightHandIKBeg=1;
+			rightHandIKCurve[]={1};
+			rightHandIKEnd=1;
+			weaponIK=4;
+			showWeaponAim=0;
+			disableWeapons=1;
+			disableWeaponsLong=1;
+			enableBinocular=0;
+			enableMissile=0;
+			enableOptics=0;
+			canReload=0;
+			leaning="empty";
+			aimingBody="empty";
+			aiming="empty";
+			forceAim=1;
+			limitGunMovement=9.1000004;
+			headBobMode=0;
+			headBobStrength=0;
+			canPullTrigger=0;
+			enableDirectControl=0;
+			weaponLowered=0;
+			variantsPlayer[]={};
+			variantsAI[]={};
+			ConnectFrom[]=
+			{
+				"AmovPercMstpSnonWnonDnon",
+				2
+			};
+			ConnectTo[]=
+			{
+				"AmovPercMstpSnonWnonDnon",
+				2
+			};
+			InterpolateTo[]=
+			{
+				"DeadState",
+				0.0099999998
+			};
+			showHandGun=0;
+			showItemInRightHand=0;
+			soundEnabled=1;
+		};
+
+		//Vehicles
+		class Crew;
+		class KIA_Golf_Driver: DefaultDie
+		{
+			actions="DeadActions";
+			file="\Extremo_assets\animation\vw_golf\KIA_Golf_Driver.rtm";
+			speed=1e+010;
+			terminal=1;
+			soundEnabled=0;
+		};
+		class Golf_Driver: Crew
+		{
+			file="\Extremo_assets\animation\vw_golf\Golf_Driver.rtm";
+			connectTo[]=
+			{
+				"KIA_Golf_Driver",
+				1
+			};
+		};
+		class KIA_Golf_Cargo01: DefaultDie
+		{
+			actions="DeadActions";
+			file="\Extremo_assets\animation\vw_golf\KIA_Golf_Cargo1.rtm";
+			speed=1e+010;
+			terminal=1;
+			soundEnabled=0;
+		};
+		class Golf_Cargo01: Crew
+		{
+			file="\Extremo_assets\animation\vw_golf\Golf_Cargo1.rtm";
+			connectTo[]=
+			{
+				"KIA_Golf_Cargo01",
+				1
+			};
+		};
+		class KIA_Golf_Cargo02: DefaultDie
+		{
+			actions="DeadActions";
+			file="\Extremo_assets\animation\vw_golf\KIA_Golf_Cargo2.rtm";
+			speed=1e+010;
+			terminal=1;
+			soundEnabled=0;
+		};
+		class Golf_Cargo02: Crew
+		{
+			file="\Extremo_assets\animation\vw_golf\Golf_Cargo2.rtm";
+			connectTo[]=
+			{
+				"KIA_Golf_Cargo02",
+				1
+			};
+		};
+		class KIA_Golf_Cargo03: DefaultDie
+		{
+			actions="DeadActions";
+			file="\Extremo_assets\animation\vw_golf\KIA_Golf_Cargo3.rtm";
+			speed=1e+010;
+			terminal=1;
+			soundEnabled=0;
+		};
+		class Golf_Cargo03: Crew
+		{
+			file="\Extremo_assets\animation\vw_golf\Golf_Cargo3.rtm";
+			connectTo[]=
+			{
+				"KIA_Golf_Cargo03",
+				1
+			};
+		};
+	
+	};
+};
+
+class CfgExtremoDelayedActions
+{
+	class Abstract
+	{
+		duration=10;
+		abortInCombatMode=1;
+		durationFunction="";
+		animation="";
+		animationType="switchMove";
+		failChance=0;
+		conditionFunction="";
+		completedFunction="";
+		abortedFunction="";
+		failedFunction="";
+		repeatingCheckFunction="";
+	};
+	class RepairVehicle: Abstract
+	{
+		duration=37;
+		animation="Extremo_Acts_RepairVehicle01_Animation01";
+		conditionFunction="Extremo_fnc_action_repairVehicle_condition";
+		completedFunction="Extremo_fnc_action_repairVehicle_completed";
+	};
+	class HotwireVehicle: Abstract
+	{
+		duration="3 * 60";
+		failChance=50;
+		animation="Extremo_Acts_RepairVehicle01_Animation01";
+		conditionFunction="Extremo_fnc_action_hotwireVehicle_condition";
+		completedFunction="Extremo_fnc_action_hotwireVehicle_completed";
+		failedFunction="Extremo_fnc_action_hotwireVehicle_failed";
+	};
+	class StealFlag: Abstract
+	{
+		duration=60;
+		abortInCombatMode=0;
+		durationFunction="Extremo_fnc_action_stealFlag_duration";
+		animation="Extremo_Acts_RepairVehicle01_Animation01";
+		conditionFunction="Extremo_fnc_action_stealFlag_condition";
+		completedFunction="Extremo_fnc_action_stealFlag_completed";
+	};
+	class HideBody: Abstract
+	{
+		duration=10;
+		animation="Extremo_Shovel_Dig01";
+		conditionFunction="Extremo_fnc_action_HideBody_condition";
+		completedFunction="Extremo_fnc_action_HideBody_completed";
+	};
+	class PlantChargeWood: Abstract
+	{
+		duration="3 * 60";
+		abortInCombatMode=0;
+		animation="Extremo_Acts_RepairVehicle01_Animation01";
+		conditionFunction="Extremo_fnc_action_breaching_condition";
+		completedFunction="Extremo_fnc_action_breaching_completed";
+		failedFunction="Extremo_fnc_action_breaching_failed";
+		abortedFunction="Extremo_fnc_action_breaching_aborted";
+	};
+	class PlantChargeMetal: PlantChargeWood
+	{
+		duration="5 * 60";
+	};
+	class PlantChargeConcrete: PlantChargeWood
+	{
+		duration="7 * 60";
+	};
+	class RepairConstruction: Abstract
+	{
+		animation="Extremo_Acts_RepairVehicle01_Animation01";
+		durationFunction="Extremo_fnc_action_repairConstruction_duration";
+		conditionFunction="Extremo_fnc_action_repairConstruction_condition";
+		completedFunction="Extremo_fnc_action_repairConstruction_completed";
+	};
+	class GutAnimal: Abstract
+	{
+		duration=10;
+		animationType="playMoveNow";
+		animation="AinvPknlMstpSnonWnonDr_medic5";
+		conditionFunction="Extremo_fnc_action_GutAnimal_condition";
+		completedFunction="Extremo_fnc_action_GutAnimal_completed";
+	};
+	class HackLock: Abstract
+	{
+		animationType="switchMove";
+		animation="Acts_TerminalOpen";
+		abortInCombatMode=0;
+		failChanceFunction="Extremo_fnc_action_hackLock_failChance";
+		durationFunction="Extremo_fnc_action_hackLock_duration";
+		conditionFunction="Extremo_fnc_action_hackLock_condition";
+		completedFunction="Extremo_fnc_action_hackLock_completed";
+		failedFunction="Extremo_fnc_action_hackLock_failed";
+		abortedFunction="Extremo_fnc_action_hackLock_aborted";
+	};
+	class GrindLock: Abstract
+	{
+		animationType="switchMove";
+		animation="Extremo_Acts_RepairVehicle01_Animation01";
+		abortInCombatMode=0;
+		failChanceFunction="Extremo_fnc_action_grindLock_failChance";
+		durationFunction="Extremo_fnc_action_grindLock_duration";
+		conditionFunction="Extremo_fnc_action_grindLock_condition";
+		completedFunction="Extremo_fnc_action_grindLock_completed";
+		failedFunction="Extremo_fnc_action_grindLock_failed";
+		abortedFunction="Extremo_fnc_action_grindLock_aborted";
+	};
+};
+
+class CfgAnimationSourceSounds
+{
+	class Extremo_AnimationSound_ConcreteMixer
+	{
+		class Start
+		{
+			loop=0;
+			sound0[]=
+			{
+				"Extremo_Assets\sound\Extremo_ConcreteMixer01.wss",
+				1,
+				1,
+				50
+			};
+			sound[]=
+			{
+				"sound0",
+				1
+			};
+			terminate=0;
+			trigger="direction";
+		};
+	};
+};
