@@ -1,4 +1,4 @@
-# Extremo Survival Framework
+# Extremo Framework
 
 ### File Checks
 [![Headers](https://github.com/ExtremoDevTeam/Framework/actions/workflows/HFChecks.yml/badge.svg?branch=main)](https://github.com/ExtremoDevTeam/Framework/actions/workflows/HFChecks.yml)
