@@ -5,10 +5,11 @@
 [![C++](https://img.shields.io/badge/Language-C%2B%2B-%23f34b7d.svg?style=plastic)](https://en.wikipedia.org/wiki/C%2B%2B) 
 [![SQF](https://img.shields.io/badge/Language-SQF-%23f34b7d.svg?style=plastic)](https://community.bistudio.com/wiki/SQF_Syntax)
 [![SQL](https://img.shields.io/badge/Language-SQL-%23f34b7d.svg?style=plastic)](https://en.wikipedia.org/wiki/SQL)
+<br>
+[![License](https://img.shields.io/github/license/ExtremoDevTeam/Framework.svg?style=plastic)](LICENSE)
 [![LastCommit](https://img.shields.io/github/last-commit/ExtremoDevTeam/Framework.svg?style=plastic)](https://github.com/ExtremoDevTeam/Framework/commits)
 [![PullRequests](https://img.shields.io/github/issues-pr/ExtremoDevTeam/Framework.svg?style=plastic)](https://github.com/ExtremoDevTeam/Framework/pulls)
 [![Issues](https://img.shields.io/github/issues/ExtremoDevTeam/Framework.svg?style=plastic)](https://github.com/ExtremoDevTeam/Framework/issues)
-[![License](https://img.shields.io/github/license/ExtremoDevTeam/Framework.svg?style=plastic)](LICENSE)
 <br>
 <br>
 ## Error checks
