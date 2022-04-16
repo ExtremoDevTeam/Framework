@@ -2,7 +2,7 @@
   "Port": 2302,
   "ProfileName": "Extremo",
   "ServerDirectory": "D:\\SteamLibrary\\steamapps\\common\\Arma3Server",
-  "FrameworkDirectory": "D:\\GitHub\\Repos\\Ni1kko\\A3Extremo",
+  "FrameworkDirectory": "D:\\GitHub\\Repos\\ExtremoDevTeam\\Framework",
   "MissionFile": 1,
   "MissionFiles": [
     "Altis",
