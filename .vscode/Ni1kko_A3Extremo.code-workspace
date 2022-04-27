@@ -5,12 +5,33 @@
 		}
 	],
 	"settings": { 
-		"sqfVmLanguageServer.ls.additionalMappings": [
-			{"/Extremo_assets": "D:/GitHub/Repos/Ni1kko/A3Extremo/Extremo_assets" }
-		],
+		"workbench.startupEditor": "readme",
+		"editor.minimap.enabled": false,
+		"editor.insertSpaces": true,
+		"editor.largeFileOptimizations": true, 
+		"editor.inlineSuggest.enabled": true,
+		"diffEditor.ignoreTrimWhitespace": false,
+		"workbench.colorTheme": "Copilot Theme",
+		"git.enableCommitSigning": true,
+		"discord.detailsEditing": "Editing:  Line#{current_line} - {file_name}", 
+		"discord.smallImage": "https://github.com/Ni1kko",
+		"discord.lowerDetailsDebugging": "Debugging: {workspace}  - {git_branch}",
+		"discord.lowerDetailsEditing": "Workspace: {workspace_folder} - {git_branch}",
+		"discord.detailsIdling": "Idle",
+		"discord.swapBigAndSmallImage": true,
+		"discord.removeTimestamp": true,
+		"discord.idleTimeout": 500, 
 		"sqflint.includePrefixes": {
-			"\\A3\\": "D:/SteamLibrary/steamapps/common/Arma3Server/addons" 
+			"\\A3\\": "D:/SteamLibrary/steamapps/common/Arma3Server/addons/"
 		},
-		"sqflint.checkPaths": true,
+		"sqflint.discoverDescriptionFiles": false,
+		"sqflint.contextSeparation": false,
+		"sqflint.indexWorkspace": false,
+		"sqflint.indexWorkspaceTwice": false,
+		"sqflint.warnings": false,
+		"sqf.enableACE3": false,
+		"sqf.enableCBA": false,
+		"sqf.enableTOH": true,
+    	"sqf.maxNumberOfProblems": 999999
 	},
 }

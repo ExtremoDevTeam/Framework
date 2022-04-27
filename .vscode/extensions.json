@@ -6,7 +6,10 @@
         "vlad333000.sqf",
         "sparker95.sqf-vm-vscode",
         "skacekachna.sqflint",
-        "GitHub.copilot",
-        "benjaminbenais.copilot-theme"
+        "github.copilot",
+        "benjaminbenais.copilot-theme",
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "icrawl.discord-vscode"
     ]
 }
