@@ -4,7 +4,7 @@
 */
 
 //--- Get version info
-(getText(configFile >> "CfgPatches" >> "Extremo_Server" >> "frameworkVersion") call extremo_fnc_system_versionInfo)params[
+(getText(configFile >> "CfgPatches" >> "Extremo_server" >> "frameworkVersion") call extremo_fnc_system_versionInfo)params[
 	["_versionFull",""],
 	["_versionShort",""],
 	["_verMajor",0],

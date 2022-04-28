@@ -1,6 +1,6 @@
 class CfgPatches 
 {
-    class Extremo_Server_Functions
+    class Extremo_server_functions
 	{
         class authors_info
 		{
@@ -26,7 +26,7 @@ class CfgFunctions
         //--- Extremo Event Functions 
         class Event_Functions
         {
-            file = "\Extremo_Server\functions\events"; 
+            file = "\Extremo_server\functions\events"; 
             class event_playerConnected {};
             class event_playerDisconnected {};
             class event_handleDisconnect {};
@@ -36,7 +36,7 @@ class CfgFunctions
         //--- Extremo Loot Functions
         class Loot_Functions
         {
-            file = "\Extremo_Server\functions\loot";
+            file = "\Extremo_server\functions\loot";
             class loot_initialize {};
             class loot_addItem {};
             class loot_spawn {};
@@ -45,7 +45,7 @@ class CfgFunctions
         //--- Extremo Server Functions 
         class Server_Functions
         {
-            file = "\Extremo_Server\functions\server"; 
+            file = "\Extremo_server\functions\server"; 
             class server_init {};
             class server_log {};
         };
@@ -53,7 +53,7 @@ class CfgFunctions
         //--- Extremo System Functions 
         class System_Functions
         {
-            file = "\Extremo_Server\functions\system"; 
+            file = "\Extremo_server\functions\system"; 
             class system_versionInfo {};
             class system_getObjectFromBEGuid {};
         };
@@ -61,7 +61,7 @@ class CfgFunctions
         //--- Extremo Utils Functions
         class Utils_Functions
         {
-            file = "\Extremo_Server\functions\utils";
+            file = "\Extremo_server\functions\utils";
             class utils_getCargoType {}; 
             class utils_isTerritoryInRange {}; 
         };
@@ -69,7 +69,7 @@ class CfgFunctions
         //--- Extremo Vehicles Functions
         class Vehicles_Functions
         {
-            file = "\Extremo_Server\functions\vehicles"; 
+            file = "\Extremo_server\functions\vehicles"; 
             class vehicles_initialize {};
             class vehicles_createCareful {};
             class vehicles_createNonPersistentVehicle {};

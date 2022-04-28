@@ -81,7 +81,7 @@ class Header
 
 class CfgPatches
 {
-    class Extremo_Mission
+    class Extremo_mission
 	{
         class authors_info
 		{

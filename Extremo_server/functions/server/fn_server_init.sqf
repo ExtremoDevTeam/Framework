@@ -7,8 +7,8 @@
 
 //--- Get version info
 ([
-	[configFile,"Extremo_Server"],
-	[missionConfigFile,"Extremo_Mission"]
+	[configFile,"Extremo_server"],
+	[missionConfigFile,"Extremo_mission"]
 ] apply {
 	getText((_x#0) >> "CfgPatches" >> (_x#1) >> "frameworkVersion")
 }) params [

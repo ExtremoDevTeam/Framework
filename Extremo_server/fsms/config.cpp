@@ -1,6 +1,6 @@
 class CfgPatches 
 {
-    class Extremo_Server_Fsms
+    class Extremo_server_fsms
 	{
         class authors_info
 		{
@@ -25,7 +25,7 @@ class CfgPatches
     {
         class Server_FiniteStateMachines
 		{
-			file="\Extremo_Server\FSM";
+			file="\Extremo_server\FSM";
 			class scheduler {ext=".fsm";};
 		};
     };

@@ -1,6 +1,6 @@
 class CfgPatches 
 {
-    class Extremo_Server
+    class Extremo_server
 	{
         class authors_info
 		{
@@ -23,8 +23,8 @@ class CfgPatches
 		requiredVersion = 2.08;
 		requiredBuild = "149049"; 
 		requiredAddons[] = {
-            "Extremo_Server_Functions", 
-            "Extremo_Server_Fsms"
+            "Extremo_server_functions", 
+            "Extremo_server_fsms"
         };
 		units[] = {};
 		weapons[] = {};
@@ -37,7 +37,7 @@ class CfgFunctions
     {
         class Server_Root_Functions
         {
-            file = "\Extremo_Server"; 
+            file = "\Extremo_server"; 
             class preInit {preInit=1;};
         };
     };

@@ -25,7 +25,7 @@ waitUntil {!isNil "Extremo_var_system_versionOK" AND {!isNil "Extremo_var_system
 if !Extremo_var_system_versionOK exitWith 
 {
 	//--- 
-	(getText(missionConfigFile >> "CfgPatches" >> "Extremo_Mission" >> "frameworkVersion") call extremo_fnc_system_versionInfo)params[
+	(getText(missionConfigFile >> "CfgPatches" >> "Extremo_mission" >> "frameworkVersion") call extremo_fnc_system_versionInfo)params[
 		["_clientVersionFull",""],
 		["_clientVersionShort",""],
 		["_clientVerMajor",0],

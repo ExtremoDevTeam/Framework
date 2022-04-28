@@ -1,6 +1,6 @@
 class CfgPatches 
 {
-    class Extremo_Server_Database
+    class Extremo_server_database
 	{
         class authors_info
 		{
@@ -50,7 +50,7 @@ class CfgFunctions
     {
         class Database_Functions
         {
-            file = "\Extremo_Server\functions\database";
+            file = "\Extremo_server\functions\database";
             class database_initialize {};//{preInit = 1;};
             class database_initializeHC {};
             class database_rawasync_request {};

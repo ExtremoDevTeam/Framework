@@ -22,7 +22,7 @@ class EditorData
 		aside[]={-0.11076362,-4.4402623e-007,0.99393278};
 	};
 };
-sourceName="Extremo_Mission";
+sourceName="Extremo_mission";
 addons[]=
 {
 	"A3_Ui_F",
