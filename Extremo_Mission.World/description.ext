@@ -138,6 +138,7 @@ class CfgPlayer
 	{
         startCash = 100;
         startBank = 10000;
+        preloadDistance = 50;
         forbiddenPositions[] = {
             //{"marker", distance}
         };
